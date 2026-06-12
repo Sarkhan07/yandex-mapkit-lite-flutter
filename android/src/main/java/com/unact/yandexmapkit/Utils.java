@@ -62,6 +62,7 @@ public class Utils {
       pointFromJson((Map<String, Object>) json.get("point")),
       RequestPointType.values()[(Integer) json.get("requestPointType")],
       null,
+      null,
       null
     );
   }

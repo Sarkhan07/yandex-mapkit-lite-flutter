@@ -234,7 +234,7 @@ public class YandexMapController implements
     Map<String, Object> anchor = (Map<String, Object>) params.get("anchor");
 
     userLocationLayer.setVisible((Boolean) params.get("visible"));
-    userLocationLayer.setHeadingEnabled((Boolean) params.get("headingEnabled"));
+    userLocationLayer.setHeadingModeActive((Boolean) params.get("headingEnabled"));
     userLocationLayer.setAutoZoomEnabled((Boolean) params.get("autoZoomEnabled"));
     userLocationLayer.resetAnchor();
 
@@ -268,7 +268,8 @@ public class YandexMapController implements
       new GeoObjectSelectionMetadata(
         (String) params.get("objectId"),
         (String) params.get("dataSourceName"),
-        (String) params.get("layerId")
+        (String) params.get("layerId"),
+        params.get("groupId") == null ? 0L : ((Number) params.get("groupId")).longValue()
       )
     );
   }
